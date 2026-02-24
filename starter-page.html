@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>HMI Setup with TIA Portal | TouchFusionAuto</title>
+  <meta name="description" content="Practical guide from TouchFusionAuto on how to connect Siemens TIA Portal projects to modern HMI panels with clean tag mapping, alarms, and testing.">
+  <meta name="keywords" content="HMI Panels, TIA Portal, Siemens PLC, Industrial Automation, PLC Programming">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: LeadPage
+  * Template URL: https://bootstrapmade.com/leadpage-bootstrap-landing-page-template/
+  * Updated: Aug 12 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl position-relative">
+
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo.webp" alt=""> -->
+          <h1 class="sitename">TouchFusionAuto</h1>
+        </a>
+
+        <div class="d-flex align-items-center">
+          <div class="social-links">
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="nav-wrap">
+      <div class="container d-flex justify-content-center position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Solutions</a></li>
+            <li><a href="index.html#portfolio">Products</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="#">Dropdown 1</a></li>
+                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="#">Deep Dropdown 1</a></li>
+                    <li><a href="#">Deep Dropdown 2</a></li>
+                    <li><a href="#">Deep Dropdown 3</a></li>
+                    <li><a href="#">Deep Dropdown 4</a></li>
+                    <li><a href="#">Deep Dropdown 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Dropdown 2</a></li>
+                <li><a href="#">Dropdown 3</a></li>
+                <li><a href="#">Dropdown 4</a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/bg/bg-2.webp);">
+      <div class="container position-relative">
+        <h1>HMI Setup with TIA Portal</h1>
+        <p>A practical checklist for connecting Siemens PLCs to modern HMI panels – from tag mapping to alarms and final testing.</p>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">HMI Setup with TIA Portal</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Article Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">HMI Guide</span>
+        <h2>HMI Setup with TIA Portal for Modern Panels</h2>
+        <p>How to connect Siemens PLCs to HMI panels in a clean, maintainable way that scales across multiple lines and sites.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-8">
+            <article>
+              <h3>1. Start from a clear tag structure in TIA Portal</h3>
+              <p>Before touching the HMI, make sure your TIA Portal project has a clean, consistent tag structure. Group process tags into tag tables by area or function (for example: <strong>WT_Pumps</strong>, <strong>PKG_Line1</strong>) and use meaningful names that your whole team can understand.</p>
+
+              <p>Avoid cryptic abbreviations that only one engineer knows. If you are deploying the same logic to several machines or lines, invest time in building a standard tag naming convention first – it will pay off when you replicate HMIs across your site or across different countries.</p>
+
+              <h3>2. Decide which data belongs on the HMI</h3>
+              <p>Not every PLC tag should appear on the HMI. Focus on:</p>
+              <ul>
+                <li>Operator actions (start/stop, mode selections, setpoints)</li>
+                <li>Key process values (flows, levels, temperatures, speeds)</li>
+                <li>Alarms and interlocks that require operator attention</li>
+                <li>Production KPIs such as counts, OEE components, and shift summaries</li>
+              </ul>
+
+              <p>Create a simple <em>HMI Tag List</em> in Excel or within your project that lists each tag, its description, units, and where it should appear on the HMI (screen, group, or popup). This becomes the contract between PLC and HMI design.</p>
+
+              <h3>3. Map PLC tags to HMI tags cleanly</h3>
+              <p>When you configure the HMI connection, avoid pointing every object directly to deep PLC addresses. Instead, create HMI‑side tags linked to PLC tags and then bind screen objects to those HMI tags. This gives you a layer where you can adjust addresses later without redesigning screens.</p>
+
+              <p>For global deployments, use English tag names and then localize the on‑screen text (labels, messages) into other languages, such as Arabic, at the HMI level. TouchFusionAuto typically builds bilingual libraries with consistent wording across all screens.</p>
+
+              <h3>4. Standardize alarms and messages</h3>
+              <p>Rather than creating alarms ad‑hoc, define alarm classes (e.g. <strong>Critical</strong>, <strong>Process</strong>, <strong>Maintenance</strong>) and reuse them. Give each alarm a unique ID, clear English text, and optional Arabic translation for operator clarity.</p>
+
+              <p>Make sure alarms include the information an operator actually needs: what happened, which area, and what action is expected. Avoid generic “Fault” messages. Tie alarms to PLC bits that will remain stable over the life of the machine.</p>
+
+              <h3>5. Design screens for operators, not engineers</h3>
+              <p>Start with a high‑level overview screen that shows the status of key areas (OK / Alarm / Stopped) and production KPIs. From there, allow operators to drill down into detail screens for pumps, conveyors, or batches.</p>
+
+              <p>Use consistent colors and symbols. For example, reserve red for alarms, yellow for warnings, and green for healthy operation. Keep text labels short and readable, and avoid filling screens with rarely needed values that distract operators from the main job.</p>
+
+              <h3>6. Test with a PLC simulator or IO test rig</h3>
+              <p>Before deploying to site, connect your HMI project to a Siemens PLC simulator or a dedicated IO test rig. Run through typical and edge‑case scenarios: startup, normal operation, stop, fault, power loss, and communication failures.</p>
+
+              <p>Check that:</p>
+              <ul>
+                <li>All critical tags update in real time</li>
+                <li>Alarms trigger with correct text and severity</li>
+                <li>Operator commands reach the PLC and are interlocked correctly</li>
+                <li>Language switching behaves as expected</li>
+              </ul>
+
+              <h3>7. Plan for future IoT and analytics</h3>
+              <p>If you know you will later send data to MQTT, Node‑RED, or cloud analytics, think about this during the HMI and PLC design. Standardized tag names and structured data blocks make mapping to IoT gateways much easier.</p>
+
+              <p>TouchFusionAuto typically prepares a <em>data map</em> that lists which tags will be published to IoT, their units, and required sampling rate. This avoids overloading networks and ensures you capture the right information for OEE, maintenance, and management reports.</p>
+
+              <h3>Need help with your TIA Portal + HMI project?</h3>
+              <p>If you want an expert review of your current design or a complete HMI library that can be deployed across multiple sites, our team can help. We work remotely and on‑site with engineering teams worldwide.</p>
+
+              <a href="index.html#contact" class="btn btn-primary mt-3">Request HMI Review / اطلب مراجعة HMI</a>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <aside>
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h5>Download the HMI Checklist</h5>
+                  <p class="mb-2">Get a one‑page PDF checklist you can use on every new project.</p>
+                  <a href="index.html#contact" class="btn btn-outline-primary btn-sm">Get the checklist</a>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h5>Remote Support from TFA</h5>
+                  <p class="mb-2">Need help debugging a live TIA Portal + HMI issue?</p>
+                  <a href="https://wa.me/201000000000" target="_blank" rel="noopener" class="btn btn-success btn-sm w-100">WhatsApp an Engineer</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Article Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container">
+      <div class="row gy-5">
+
+        <div class="col-lg-4">
+          <div class="footer-content">
+            <a href="index.html" class="logo d-flex align-items-center mb-4">
+              <span class="sitename">TouchFusionAuto</span>
+            </a>
+            <p class="mb-4">TouchFusionAuto (TFA) shares practical guides on HMI panels, PLC programming, and industrial IoT for engineering teams worldwide.</p>
+
+            <div class="newsletter-form">
+              <h5>Stay Updated</h5>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="input-group">
+                  <input type="email" name="email" class="form-control" placeholder="Enter your email" required="">
+                  <button type="submit" class="btn-subscribe">
+                    <i class="bi bi-send"></i>
+                  </button>
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Thank you for subscribing!</div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> About</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Careers</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Press</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Blog</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <div class="footer-links">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Digital Strategy</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Cloud Computing</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Data Analytics</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> AI Solutions</a></li>
+              <li><a href="#"><i class="bi bi-chevron-right"></i> Cybersecurity</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="footer-contact">
+            <h4>Get in Touch</h4>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <div class="contact-info">
+                <p>2847 Maple Avenue<br>Los Angeles, CA 90210<br>United States</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-telephone"></i>
+              </div>
+              <div class="contact-info">
+                <p>+1 (555) 987-6543</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="bi bi-envelope"></i>
+              </div>
+              <div class="contact-info">
+                <p>contact@example.com</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="copyright">
+              <p>© <span>Copyright</span> <strong class="px-1 sitename">MyWebsite</strong> <span>All Rights Reserved</span></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+            <div class="credits">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you've purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
